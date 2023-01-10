@@ -1,5 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
   provider = "prisma-client-js"
@@ -17,4 +15,14 @@ model User {
   password String @unique
   imageUrl String?
   createdAt       DateTime    @default(now())
+  tweets        Tweet[]
+
+}
+
+model Tweet {
+  id     String @id @default(auto()) @map("_id") @db.ObjectId
+  body   String
+  likes  Int
+  user   User   @relation(fields: [userId], references: [id])
+  userId String @db.ObjectId
 }

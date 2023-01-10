@@ -5,18 +5,20 @@ const User = ({ user }) => {
   return (
     <section className="my-6 mx-8 flex gap-20">
       <div>
-        <div className="relative h-40 w-40 rounded-full">
+        <div className="">
           {user?.imageUrl ? (
-            <Image
-              src={user.imageUrl}
-              alt={user.name ?? "profile image"}
-              className="inline-block rounded-full"
-              fill
-              priority
-              sizes="(max-width: 768px) 20vw,
-              (max-width: 1200px) 10vw,
-              6vw"
-            />
+            <div className=" relative h-40 w-40 rounded-full">
+              <Image
+                src={user.imageUrl}
+                alt={user.name ?? "profile image"}
+                className="inline-block rounded-full"
+                fill
+                priority
+                sizes="(min-width: 66em) 10vw,
+  (min-width: 44em) 15vw,
+  30vw"
+              />
+            </div>
           ) : (
             <span className="inline-block h-40 w-40 overflow-hidden rounded-full bg-gray-100">
               <svg

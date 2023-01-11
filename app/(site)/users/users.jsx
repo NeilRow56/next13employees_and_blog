@@ -1,4 +1,4 @@
-import { getUsers } from "../../lib/prisma/users";
+import { getUsers } from "../../../lib/prisma/users";
 import Link from "next/link";
 
 const Users = async () => {
